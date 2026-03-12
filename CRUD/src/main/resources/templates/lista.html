@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Dispositivos</title>
+</head>
+<body>
+
+<h1>Lista de Dispositivos</h1>
+
+<a href="/dispositivos/nuevo">Agregar Dispositivo</a>
+
+<table border="1">
+
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Acciones</th>
+    </tr>
+
+    <tr th:each="d : ${dispositivos}">
+
+        <td th:text="${d.id}"></td>
+        <td th:text="${d.nombre}"></td>
+        <td th:text="${d.tipo}"></td>
+        <td th:text="${d.marca}"></td>
+        <td th:text="${d.modelo}"></td>
+
+        <td>
+
+            <a th:href="@{/dispositivos/editar/{id}(id=${d.id})}">Editar</a>
+
+            <a th:href="@{/dispositivos/eliminar/{id}(id=${d.id})}">Eliminar</a>
+
+        </td>
+
+    </tr>
+
+</table>
+
+</body>
+</html>
