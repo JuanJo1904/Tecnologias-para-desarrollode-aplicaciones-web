@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Dispositivo</title>
+</head>
+<body>
+
+<h1>Editar Dispositivo</h1>
+
+<form th:action="@{/dispositivos/actualizar}" method="post" th:object="${dispositivo}">
+
+    ID: <input type="number" th:field="*{id}" readonly><br>
+
+    Nombre: <input type="text" th:field="*{nombre}"><br>
+
+    Tipo: <input type="text" th:field="*{tipo}"><br>
+
+    Marca: <input type="text" th:field="*{marca}"><br>
+
+    Modelo: <input type="text" th:field="*{modelo}"><br>
+
+    <button type="submit">Actualizar</button>
+
+    <a href="/dispositivos">Cancelar</a>
+
+</form>
+
+</body>
+</html>
